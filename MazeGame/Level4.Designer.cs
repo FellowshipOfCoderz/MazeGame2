@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Level4));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -64,6 +65,7 @@
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.pictureBox29 = new System.Windows.Forms.PictureBox();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -181,9 +183,9 @@
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox11.Location = new System.Drawing.Point(315, 30);
+            this.pictureBox11.Location = new System.Drawing.Point(392, 81);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(23, 153);
+            this.pictureBox11.Size = new System.Drawing.Size(24, 102);
             this.pictureBox11.TabIndex = 10;
             this.pictureBox11.TabStop = false;
             // 
@@ -208,18 +210,18 @@
             // pictureBox14
             // 
             this.pictureBox14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox14.Location = new System.Drawing.Point(753, 349);
+            this.pictureBox14.Location = new System.Drawing.Point(315, 139);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(154, 26);
+            this.pictureBox14.Size = new System.Drawing.Size(30, 107);
             this.pictureBox14.TabIndex = 13;
             this.pictureBox14.TabStop = false;
             // 
             // pictureBox15
             // 
             this.pictureBox15.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox15.Location = new System.Drawing.Point(636, 280);
+            this.pictureBox15.Location = new System.Drawing.Point(636, 243);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(27, 95);
+            this.pictureBox15.Size = new System.Drawing.Size(30, 95);
             this.pictureBox15.TabIndex = 14;
             this.pictureBox15.TabStop = false;
             // 
@@ -426,6 +428,11 @@
             this.pictureBox30.TabIndex = 51;
             this.pictureBox30.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Level4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -541,5 +548,6 @@
         private System.Windows.Forms.PictureBox pictureBox28;
         private System.Windows.Forms.PictureBox pictureBox29;
         private System.Windows.Forms.PictureBox pictureBox30;
+        private System.Windows.Forms.Timer timer1;
     }
 }

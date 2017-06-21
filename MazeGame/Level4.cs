@@ -92,10 +92,29 @@ namespace MazeGame
 
         private void Level4_Load_1(object sender, EventArgs e)
         {
-            sec = 15;
+            sec = 60;
             lifes = 3;
             LifesLabel.Text = lifes.ToString();
             SecLabel.Text = sec.ToString();
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            sec = sec - 1;
+            SecLabel.Text = sec.ToString();
+            if (sec == 0)
+            {
+                timer1.Enabled = false;
+                StudentHero.Left = 95;
+                StudentHero.Top = 50;
+                this.Hide();
+                var GameOver = new GameOver();
+                GameOver.Closed += (s, args) => this.Close();
+                GameOver.Show();
+                sec = 60;
+                lifes = 3;
+            }
         }
     }
 }
