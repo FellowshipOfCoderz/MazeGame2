@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace MazeGame
 {
-    public partial class Level4 : Form
+    public partial class Level5 : Form
     {
         int sec;
         int lifes;
 
-        public Level4()
+        public Level5()
         {
             InitializeComponent();
             KeyDown += new KeyEventHandler(Form_KeyDown);
@@ -70,17 +70,10 @@ namespace MazeGame
 
             if (StudentHero.Bounds.IntersectsWith(FinishLabel.Bounds))
             {
-                sec = 60;
-                lifes = 3;
-                LifesLabel.Text = lifes.ToString();
-                SecLabel.Text = sec.ToString();
-                timer1.Enabled = false;
-                StudentHero.Left = 95;
-                StudentHero.Top = 50;
                 this.Hide();
-                var Level5 = new Level5();
-                Level5.Closed += (s, args) => this.Close();
-                Level5.Show();
+                var YouWon = new YouWon();
+                YouWon.Closed += (s, args) => this.Close();
+                YouWon.Show();
             }
 
             if (lifes <= 0)
@@ -92,12 +85,7 @@ namespace MazeGame
             }
         }
 
-        private void Level4_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Level4_Load_1(object sender, EventArgs e)
+        private void Level5_Load(object sender, EventArgs e)
         {
             sec = 60;
             lifes = 3;

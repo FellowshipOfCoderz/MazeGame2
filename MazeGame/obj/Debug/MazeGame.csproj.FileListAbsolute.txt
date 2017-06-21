@@ -1,0 +1,15 @@
+D:\GitHub\MazeGame2\MazeGame\bin\Debug\MazeGame.exe.config
+D:\GitHub\MazeGame2\MazeGame\bin\Debug\MazeGame.exe
+D:\GitHub\MazeGame2\MazeGame\bin\Debug\MazeGame.pdb
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.csprojResolveAssemblyReference.cache
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.Level1.resources
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.GameOver.resources
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.Level2.resources
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.Level4.resources
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.Level3.resources
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.Level5.resources
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.Properties.Resources.resources
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.YouWon.resources
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.csproj.GenerateResource.Cache
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.exe
+D:\GitHub\MazeGame2\MazeGame\obj\Debug\MazeGame.pdb
