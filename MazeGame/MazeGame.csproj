@@ -116,6 +116,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="YouWon.resx">
       <DependentUpon>YouWon.cs</DependentUpon>
@@ -135,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeWizzard.gif" />
+    <None Include="Resources\Clip-art-heart-key-necklace-clipart.jpg" />
     <Content Include="theDude.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

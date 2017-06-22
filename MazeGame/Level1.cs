@@ -41,14 +41,23 @@
                 StudentHero.Bounds.IntersectsWith(pictureBox12.Bounds) ||
                 StudentHero.Bounds.IntersectsWith(pictureBox13.Bounds) ||
                 StudentHero.Bounds.IntersectsWith(pictureBox14.Bounds) ||
-                StudentHero.Bounds.IntersectsWith(pictureBox15.Bounds))
+                StudentHero.Bounds.IntersectsWith(pictureBox15.Bounds) ||
+                StudentHero.Bounds.IntersectsWith(pictureBox18.Bounds))
             {
                 StudentHero.Left = 95;
                 StudentHero.Top = 50;
                 lifes -= 1;
+                sec = 60;
                 LifesLabel.Text = lifes.ToString();
             }
-            if (StudentHero.Bounds.IntersectsWith(FinishLabel.Bounds))
+            if (StudentHero.Bounds.IntersectsWith(KeyPicture.Bounds))
+            {
+                KeyPicture.Left = 800;
+                KeyPicture.Visible = false;
+                pictureBox18.Left = 800;
+                pictureBox18.Visible = false;
+            }
+                if (StudentHero.Bounds.IntersectsWith(FinishLabel.Bounds))
             {
                 sec = 60;
                 lifes = 3;
