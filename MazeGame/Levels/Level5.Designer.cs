@@ -201,7 +201,7 @@
             this.StudentHero.BackColor = System.Drawing.SystemColors.Control;
             this.StudentHero.Cursor = System.Windows.Forms.Cursors.Default;
             this.StudentHero.Image = ((System.Drawing.Image)(resources.GetObject("StudentHero.Image")));
-            this.StudentHero.Location = new System.Drawing.Point(49, 81);
+            this.StudentHero.Location = new System.Drawing.Point(49, 85);
             this.StudentHero.Margin = new System.Windows.Forms.Padding(4);
             this.StudentHero.Name = "StudentHero";
             this.StudentHero.Size = new System.Drawing.Size(49, 47);
@@ -216,7 +216,7 @@
             this.StartLabel.Location = new System.Drawing.Point(44, 39);
             this.StartLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StartLabel.Name = "StartLabel";
-            this.StartLabel.Size = new System.Drawing.Size(67, 29);
+            this.StartLabel.Size = new System.Drawing.Size(71, 29);
             this.StartLabel.TabIndex = 75;
             this.StartLabel.Text = "Start";
             this.StartLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;

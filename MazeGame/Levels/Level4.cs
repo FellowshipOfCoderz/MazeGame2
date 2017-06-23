@@ -1,20 +1,27 @@
-﻿namespace MazeGame
-{
-    using System;
-    using System.Drawing;
-    using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-    public partial class Level2 : Form
+namespace MazeGame
+{
+    public partial class Level4 : Form
     {
         int sec;
         int lifes;
-        public Level2()
+
+        public Level4()
         {
             InitializeComponent();
-            KeyDown += new KeyEventHandler(Level2_KeyDown);
-
+            KeyDown += new KeyEventHandler(Form_KeyDown);
         }
-        private void Level2_KeyDown(object sender, KeyEventArgs e)
+
+        private void Form_KeyDown(object sender, KeyEventArgs e)
         {
             int x = StudentHero.Location.X;
             int y = StudentHero.Location.Y;
@@ -45,61 +52,69 @@
                 StudentHero.Bounds.IntersectsWith(pictureBox17.Bounds) ||
                 StudentHero.Bounds.IntersectsWith(pictureBox18.Bounds) ||
                 StudentHero.Bounds.IntersectsWith(pictureBox19.Bounds) ||
-                StudentHero.Bounds.IntersectsWith(pictureBox20.Bounds))
+                StudentHero.Bounds.IntersectsWith(pictureBox20.Bounds) ||
+                StudentHero.Bounds.IntersectsWith(pictureBox21.Bounds) ||
+                StudentHero.Bounds.IntersectsWith(pictureBox22.Bounds) ||
+                StudentHero.Bounds.IntersectsWith(pictureBox23.Bounds) ||
+                StudentHero.Bounds.IntersectsWith(pictureBox24.Bounds) ||
+                StudentHero.Bounds.IntersectsWith(pictureBox25.Bounds) ||
+                StudentHero.Bounds.IntersectsWith(pictureBox26.Bounds) ||
+                StudentHero.Bounds.IntersectsWith(pictureBox27.Bounds) ||
+                StudentHero.Bounds.IntersectsWith(pictureBox28.Bounds))
             {
-                StudentHero.Left = 95;
-                StudentHero.Top = 50;
+                StudentHero.Left = 47;
+                StudentHero.Top = 72;
                 lifes -= 1;
+                sec = 60;
+                SecLabel.Text = sec.ToString();
                 LifesLabel.Text = lifes.ToString();
             }
+
             if (StudentHero.Bounds.IntersectsWith(FinishLabel.Bounds))
             {
                 sec = 60;
                 lifes = 3;
                 LifesLabel.Text = lifes.ToString();
                 SecLabel.Text = sec.ToString();
-                Timer1.Enabled = false;
+                timer1.Enabled = false;
                 StudentHero.Left = 95;
                 StudentHero.Top = 50;
                 this.Hide();
-                var Level3 = new Level3();
-                Level3.Closed += (s, args) => this.Close();
-                Level3.Show();
+                var Level5 = new Level5();
+                Level5.Closed += (s, args) => this.Close();
+                Level5.Show();
             }
 
-            if (lifes == 0)
+            if (lifes <= 0)
             {
-                sec = 60;
-                lifes = 3;
-                LifesLabel.Text = lifes.ToString();
-                SecLabel.Text = sec.ToString();
-                Timer1.Enabled = false;
-                StudentHero.Left = 95;
-                StudentHero.Top = 50;
                 this.Hide();
                 var GameOver = new GameOver();
                 GameOver.Closed += (s, args) => this.Close();
                 GameOver.Show();
             }
+        }
+
+        private void Level4_Load(object sender, EventArgs e)
+        {
 
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Level4_Load_1(object sender, EventArgs e)
         {
             sec = 60;
             lifes = 3;
             LifesLabel.Text = lifes.ToString();
             SecLabel.Text = sec.ToString();
-            Timer1.Enabled = true;
+            timer1.Enabled = true;
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             sec = sec - 1;
             SecLabel.Text = sec.ToString();
             if (sec == 0)
             {
-                Timer1.Enabled = false;
+                timer1.Enabled = false;
                 StudentHero.Left = 95;
                 StudentHero.Top = 50;
                 this.Hide();
@@ -109,11 +124,6 @@
                 sec = 60;
                 lifes = 3;
             }
-        }
-
-        private void SecLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

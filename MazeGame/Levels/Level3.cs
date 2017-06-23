@@ -1,35 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace MazeGame
+﻿namespace MazeGame
 {
-    public partial class Level5 : Form
+    using System;
+    using System.Drawing;
+    using System.Windows.Forms;
+
+    public partial class Level3 : Form
     {
         int sec;
         int lifes;
 
-        public Level5()
+        public Level3()
         {
             InitializeComponent();
-            KeyDown += new KeyEventHandler(Form_KeyDown);
+            KeyDown += new KeyEventHandler(LevelMichael_KeyDown);
         }
 
-        private void Form_KeyDown(object sender, KeyEventArgs e)
+        private void LevelMichael_KeyDown(object sender, KeyEventArgs key)
         {
             int x = StudentHero.Location.X;
             int y = StudentHero.Location.Y;
 
-            if (e.KeyCode == Keys.Right) x += 10;
-            else if (e.KeyCode == Keys.Left) x -= 10;
-            else if (e.KeyCode == Keys.Up) y -= 10;
-            else if (e.KeyCode == Keys.Down) y += 10;
+            if (key.KeyCode == Keys.Right) x += 10;
+            else if (key.KeyCode == Keys.Left) x -= 10;
+            else if (key.KeyCode == Keys.Up) y -= 10;
+            else if (key.KeyCode == Keys.Down) y += 10;
 
             StudentHero.Location = new Point(x, y);
 
@@ -43,7 +37,6 @@ namespace MazeGame
                 StudentHero.Bounds.IntersectsWith(pictureBox8.Bounds) ||
                 StudentHero.Bounds.IntersectsWith(pictureBox9.Bounds) ||
                 StudentHero.Bounds.IntersectsWith(pictureBox10.Bounds) ||
-                StudentHero.Bounds.IntersectsWith(pictureBox11.Bounds) ||
                 StudentHero.Bounds.IntersectsWith(pictureBox12.Bounds) ||
                 StudentHero.Bounds.IntersectsWith(pictureBox13.Bounds) ||
                 StudentHero.Bounds.IntersectsWith(pictureBox14.Bounds) ||
@@ -62,22 +55,40 @@ namespace MazeGame
                 StudentHero.Bounds.IntersectsWith(pictureBox27.Bounds) ||
                 StudentHero.Bounds.IntersectsWith(pictureBox28.Bounds))
             {
-                StudentHero.Left = 47;
-                StudentHero.Top = 72;
+                StudentHero.Left = 3;
+                StudentHero.Top = 30;
                 lifes -= 1;
+                sec = 60;
+                SecLabel.Text = sec.ToString();
                 LifesLabel.Text = lifes.ToString();
             }
 
             if (StudentHero.Bounds.IntersectsWith(FinishLabel.Bounds))
             {
+                sec = 60;
+                lifes = 3;
+                LifesLabel.Text = lifes.ToString();
+                SecLabel.Text = sec.ToString();
+                Timer3.Enabled = false;
+                StudentHero.Left = 95;
+                StudentHero.Top = 50;
                 this.Hide();
-                var YouWon = new YouWon();
-                YouWon.Closed += (s, args) => this.Close();
-                YouWon.Show();
+                var Level4 = new Level4();
+                Level4.Closed += (s, args) => this.Close();
+                Level4.Show();
             }
 
-            if (lifes <= 0)
+            if (lifes == 0)
             {
+                sec = 60;
+                lifes = 3;
+                LifesLabel.Text = lifes.ToString();
+                SecLabel.Text = sec.ToString();
+                Timer3.Enabled = false;
+
+                StudentHero.Left = 95;
+                StudentHero.Top = 50;
+
                 this.Hide();
                 var GameOver = new GameOver();
                 GameOver.Closed += (s, args) => this.Close();
@@ -85,22 +96,23 @@ namespace MazeGame
             }
         }
 
-        private void Level5_Load(object sender, EventArgs e)
+        public void LevelMichael_Load(object sender, EventArgs key)
         {
             sec = 60;
             lifes = 3;
             LifesLabel.Text = lifes.ToString();
             SecLabel.Text = sec.ToString();
-            timer1.Enabled = true;
+            Timer3.Enabled = true;
+
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer3_Tick(object sender, EventArgs key)
         {
             sec = sec - 1;
             SecLabel.Text = sec.ToString();
             if (sec == 0)
             {
-                timer1.Enabled = false;
+                Timer3.Enabled = false;
                 StudentHero.Left = 95;
                 StudentHero.Top = 50;
                 this.Hide();
@@ -109,7 +121,9 @@ namespace MazeGame
                 GameOver.Show();
                 sec = 60;
                 lifes = 3;
+
             }
         }
+
     }
 }

@@ -48,6 +48,7 @@
                 StudentHero.Top = 50;
                 lifes -= 1;
                 sec = 60;
+                SecLabel.Text = sec.ToString();
                 LifesLabel.Text = lifes.ToString();
             }
             if (StudentHero.Bounds.IntersectsWith(KeyPicture.Bounds))
